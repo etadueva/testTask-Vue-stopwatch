@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html leng="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, instal-scale=1.0" />
+    <title>Тестовый проект Vue. Секундомер.</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/fonts.css">
+    <link rel="preload" href="./fonts/gotham-pro.woff2" as="font" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header></header>
+      <main>
+        <section class="stopwatches" id="app">
+          <ul class="stopwatches__list">
+            <li class="stopwatches__item stopwatches__item--stopwatch">
+              <div class="stopwatches__item-title">
+                {{ ? }}
+              </div>
+              <div class="stopwatches__wrapper-button">
+                <button class="stopwatches__button stopwatches__button--start" type="button">
+                  <img class="stopwatches__button-image stopwatches__button-image--start" src="./images/start.svg" alt="Кнопка старт.">
+                </button>
+                <button class="stopwatches__button stopwatches__button--stop" type="button">
+                  <img class="stopwatches__button-image stopwatches__button-image--stop" src="./images/stop.svg" alt="Кнопка стоп.">
+                </button>
+                <button class="stopwatches__button stopwatches__button--reset" type="button">
+                  <img src="./images/reset.svg" alt="Кнопка сброса.">
+                </button>
+              </div>
+            </li>
+            <li class="stopwatches__item stopwatches__item--new-stopwatch">
+              <button 
+                class="stopwatches__button stopwatches__button--new-stopwatch" 
+                type="button">
+                <img src="./images/plus.svg" alt="Добавить секундомер.">
+              </button>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer></footer>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+  </body>
+</html>
