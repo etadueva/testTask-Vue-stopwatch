@@ -19,13 +19,13 @@
                 {{ formatTime(timer.time) }}
               </div>
               <div class="stopwatches__wrapper-button">
-                <button class="stopwatches__button stopwatches__button--start" type="button">
+                <button class="stopwatches__button stopwatches__button--start" type="button" @click="startTimer(timer)" v-if="!timer.isRunning">
                   <img class="stopwatches__button-image stopwatches__button-image--start" src="./images/start.svg" alt="Кнопка старт.">
                 </button>
-                <button class="stopwatches__button stopwatches__button--stop" type="button">
+                <button class="stopwatches__button stopwatches__button--stop" type="button" @click="pauseTimer(timer)" v-else="!timer.isRunning">
                   <img class="stopwatches__button-image stopwatches__button-image--stop" src="./images/stop.svg" alt="Кнопка стоп.">
                 </button>
-                <button class="stopwatches__button stopwatches__button--reset" type="button">
+                <button class="stopwatches__button stopwatches__button--reset" type="button" @click="resetTimer(timer)">
                   <img src="./images/reset.svg" alt="Кнопка сброса.">
                 </button>
               </div>
@@ -33,7 +33,8 @@
             <li class="stopwatches__item stopwatches__item--new-stopwatch">
               <button 
                 class="stopwatches__button stopwatches__button--new-stopwatch" 
-                type="button">
+                type="button" 
+                @click="addTimer">
                 <img src="./images/plus.svg" alt="Добавить секундомер.">
               </button>
             </li>
